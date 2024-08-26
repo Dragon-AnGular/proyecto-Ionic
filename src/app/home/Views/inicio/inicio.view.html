@@ -1,0 +1,31 @@
+
+<div class="content-imge">
+  <img src="../../../../assets/images/inicio.png" width="150px" alt="" srcset="">
+  <!-- <!-- <div class="footer-info"> -->
+</div>
+<div class="info">
+  <p style="text-align: center;font-weight: 900;">Acerca de hoy </p>
+  <!-- <div class="footer-info">
+  </div> -->
+  <span class="date">Fecha:{{fechaTexto}}</span>
+  <!-- <span class="repartidor">{{nombreRepartidor}}</span> -->
+  <span class="deliveries">Entregas: {{totalEntregas}}</span>
+</div>
+
+<p style="text-align: center;font-weight: 900;">Acciones</p>
+<main class="contiene-all">
+  <div class="list" id="main-content">
+    <div class="content-options">
+      <div (click)="redirectTo('descripcionEntrega')">
+        <h3><i class="fa fa-route"></i> Ruta </h3>
+
+        <p>Consulta y gestiona tus entregas actuales.</p>
+      </div>
+      <div (click)="redirectTo('descripcionEntrega')">
+        <h3><i class="fa fa-route"></i> Ir a mis entregas </h3>
+
+        <p>Consulta y gestiona tus entregas actuales.</p>
+      </div>
+    </div>
+  </div>
+</main>

@@ -1,0 +1,127 @@
+<ion-menu side="end" contentId="main-content" type="overlay">
+  <ion-header>
+    <ion-toolbar>
+      <ion-title>
+        <ng-container *ngIf="isAuthenticated; else notAuthenticated">
+          {{ userName }}
+        </ng-container>
+        <ng-template #notAuthenticated>
+          <h1>Ingresa tu cuenta</h1>
+          <h5>
+            podras ver detralles de rutas y <br>entregas.
+          </h5>
+          <ion-button expand="full" color="primary" (click)="navigateToLogin()">
+            Iniciar Sesión
+          </ion-button>
+        </ng-template>
+      </ion-title>
+    </ion-toolbar>
+  </ion-header>
+  <ion-content class="ion-padding">
+    <ng-container *ngIf="isAuthenticated;">
+      <p>Contenido del menú para usuarios autenticados.</p>
+    </ng-container>
+
+  </ion-content>
+</ion-menu>
+
+<!-- El contenido principal que estará debajo del menú -->
+
+<div class="header">
+  <div class="toolbar">
+    <h1 class="title">{{namePage}}</h1>
+    <ion-buttons slot="end">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+  </div>
+</div>
+
+<main class="contiene-all">
+  <router-outlet></router-outlet>
+</main>
+
+
+<div class="tab-bar">
+  <div class="tab-item" id="home-tab">
+    <i class="fa fa-users"></i>
+    <span>Clientes</span>
+  </div>
+  <div class="tab-item" id="library-tab">
+    <i (click)="redirectTo('ruta')" class="fa fa-map"></i>
+    <span>Ruta</span>
+  </div>
+
+  <!-- <div class="tab-item" id="library-tab"> -->
+  <ion-fab-button [routerLink]="'/home'">
+    <ion-icon name="home"></ion-icon>
+  </ion-fab-button>
+  <!-- </div> -->
+
+  <div class="tab-item" id="search-tab">
+    <i (click)="redirectTo('notificaciones')" class="fa fa-bell"></i>
+    <span>Notificaciones</span>
+  </div>
+  <div class="tab-item" id="search-tab">
+    <i (click)="redirectTo('perfil')" class="fa fa-user"></i>
+    <span>Perfil</span>
+  </div>
+</div>
+
+<style>
+  .tab-bar {
+    display: flex;
+    justify-content: space-around;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    background-color: #ffffff;
+    box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.1);
+    border-top: 1px solid #e0e0e0;
+  }
+
+  .tab-item {
+    flex: 1;
+    text-align: center;
+    padding: 10px 0;
+    font-size: 12px;
+    /* font-weight: bold; */
+    color: #334256;
+    /* color: #63738a; */
+    cursor: pointer;
+    transition: color 0.3s;
+
+    i {
+      display: block;
+      font-size: 20px;
+      margin-bottom: 5px;
+    }
+
+    &.active {
+      color: #007bff;
+      /* background: #63738a; */
+      border-radius: 5px;
+    }
+
+    &:hover {
+      color: #0056b3;
+    }
+  }
+
+  
+
+  .contiene-all {
+    height: 100vh;
+    margin-top: 15%;
+
+    width: 100%;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: -1;
+    margin-bottom: 10%;
+    /* border: dashed; */
+
+
+
+  }
+</style>

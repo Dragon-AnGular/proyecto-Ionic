@@ -1,0 +1,35 @@
+<ion-content class="ion-padding">
+  <div class="login-container">
+    <img *ngIf="!isIniciarSesion"
+      src="https://res.cloudinary.com/dvvhnrvav/image/upload/v1718483611/images/akakn968uiegphnhlj3i.jpg"
+      alt="Login Image" class="login-image" />
+    <h2>Iniciar sesion</h2>
+    <p>Please sign in to continue.</p>
+    <form [formGroup]="authForm" *ngIf="isIniciarSesion" (ngSubmit)="onLogin()">
+      <ion-item>
+        <ion-label position="floating"><ion-icon name="person-outline"></ion-icon> Username</ion-label>
+        <ion-input formControlName="username" type="text"></ion-input>
+      </ion-item>
+
+      <ion-item>
+        <ion-label position="floating"><ion-icon name="lock-closed-outline"></ion-icon> Password</ion-label>
+        <ion-input formControlName="password" type="password"></ion-input>
+      </ion-item>
+
+      <ion-item lines="none">
+        <ion-label>Remember me next time</ion-label>
+        <ion-toggle formControlName="rememberMe" slot="end"></ion-toggle>
+      </ion-item>
+
+      <ion-button color="secondary"  type="submit">Sign in</ion-button>
+    </form>
+
+    <div class="signup">
+
+      <ion-button *ngIf="!isIniciarSesion" (click)="loginAsCount()" fill="outline">Inciar con cuenta</ion-button>
+
+      <p>or</p>
+      <p  color="light" expand="full" (click)="loginAsGuest()">Continuar como visitante</p>
+    </div>
+  </div>
+</ion-content>

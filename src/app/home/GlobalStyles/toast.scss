@@ -1,0 +1,22 @@
+/* global.scss o en el CSS/SCSS del componente */
+.custom-toast {
+    --background: #f4f4f4;
+    --color: #333;
+    --border-radius: 10px;
+    --padding: 16px;
+    --box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.1);
+  }
+  
+  .custom-toast .toast-wrapper {
+    display: flex;
+    align-items: center;
+  }
+  
+  .custom-toast .toast-message {
+    font-size: 1.2rem;
+    font-weight: bold;
+  }
+  
+  .custom-toast .toast-icon {
+    margin-right: 12px;
+  }

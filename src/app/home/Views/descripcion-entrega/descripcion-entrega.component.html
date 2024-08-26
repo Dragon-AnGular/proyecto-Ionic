@@ -1,0 +1,94 @@
+<!-- <ion-header>
+  <ion-toolbar>
+    <ion-title>Huejutla</ion-title>
+    <ion-buttons slot="start">
+      <ion-button>Ruta: A</ion-button>
+    </ion-buttons>
+    <ion-buttons slot="end">
+      <ion-button>fecha: 10/12/2004</ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header> -->
+
+<ion-content>
+  <!-- <ion-button expand="block" (click)="presentToast('top')">Present Toast At the Top</ion-button> -->
+
+
+  <ion-item>
+    <ion-input placeholder="buscar cliente..."></ion-input>
+  </ion-item>
+
+  <ion-item>
+    <ion-label>filtrar colonia</ion-label>
+    <ion-select>
+      <ion-select-option value="Chalhuiyapa">Chalhuiyapa</ion-select-option>
+    </ion-select>
+  </ion-item> 
+
+  <ion-fab horizontal="end" (click)="presentToast('top')" vertical="bottom" slot="fixed">
+    <ion-fab-button>
+      <ion-icon name="add"></ion-icon>
+    </ion-fab-button>
+  </ion-fab>
+
+
+
+  <ion-content class="ion-padding">
+    <div *ngFor="let mensaje of mensajes">
+      <ion-card>
+        <ion-card-content>
+          <ion-grid>
+            <ion-row>
+              <ion-col size="6">
+                <p>Cliente: {{ mensaje.nombre }}</p>
+                <p>Municipio: {{ mensaje.municipio }}</p>
+                <p>Colonia: {{ mensaje.colonia }}</p>
+                <p>Fecha: {{ mensaje.fecha | date:'dd/MM/yyyy' }}</p>
+              </ion-col>
+              <ion-col size="6">
+                <p>Cantidad solicitado: {{ mensaje.cantidadSolicitado }}</p>
+                <p>Cantidad entregado: {{ mensaje.cantidadEntregado }}</p>
+              </ion-col>
+            </ion-row>
+            <ion-row>
+              <ion-col size="12">
+                <p>Estado actual</p>
+                <ion-chip [color]="mensaje.estado === 'pendiente' ? 'warning' : 'success'">
+                  {{ mensaje.estado | titlecase }}
+                </ion-chip>
+              </ion-col>
+            </ion-row>
+            <ion-row>
+              <ion-col size="12">
+                <ion-button expand="full" color="success" (click)="ubicar()">
+                  Ubicar
+                </ion-button>
+              </ion-col>
+            </ion-row>
+            <ion-row>
+              <ion-col size="12">
+                <ion-button expand="full" color="primary">Escanear</ion-button>
+              </ion-col>
+            </ion-row>
+          </ion-grid>
+        </ion-card-content>
+      </ion-card>
+    </div>
+  </ion-content>
+
+
+
+
+
+  <!-- <ion-footer>
+    <ion-toolbar>
+      <ion-buttons slot="start">
+        <ion-button (click)="redirectTo()">
+          <ion-icon name="home" aria-hidden="true"></ion-icon>
+        </ion-button>
+      </ion-buttons>
+      <ion-buttons slot="end">
+        <ion-button >Settings</ion-button>
+      </ion-buttons>
+    </ion-toolbar>
+  </ion-footer> -->

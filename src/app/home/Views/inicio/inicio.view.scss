@@ -1,0 +1,78 @@
+.content-imge {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #fff9ed;
+    margin-left: 5%;
+    border-radius: 10px;
+    padding-top: 3%;
+    margin-right: 5%;
+    margin-top: 5%;
+}
+
+.info {
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+    margin-left: 5%;
+    margin-right: 5%;
+
+}
+
+.contiene-all {
+
+    padding: 3%;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: -1;
+    margin-bottom: 30%;
+
+
+    .list {
+        width: 100%;
+        background-color: transparent;
+
+        .content-options {
+            list-style-type: none;
+            padding-left: 10px;
+            padding-right: 10px;
+            margin: 0;
+
+            div {
+                padding: 20px;
+                display: flex;
+                flex-direction: column;
+                background-color: #eef7f7;
+                border: 1px solid #ddd;
+                margin-bottom: 1rem;
+                border-radius: 10px;
+                /* margin-top: -5%; */
+
+                h3 {
+                    font-weight: 999;
+                    color: #334256;
+                }
+
+                /* Add this line to create a 1rem margin-bottom */
+
+                p {
+                    display: flex;
+                    align-items: center;
+                    color: #727d8c !important;
+                    font-size: 14px;
+
+                    .icon {}
+
+                    .label {}
+                }
+            }
+        }
+
+    }
+}

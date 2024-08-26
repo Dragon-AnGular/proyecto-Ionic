@@ -1,0 +1,98 @@
+// menu bar header
+ion-header {
+  z-index: 2;
+
+  .auth-container {
+    text-align: center;
+
+    h1 {
+      font-size: 24px;
+      font-weight: bold;
+      color: #333;
+    }
+
+    h5 {
+      font-size: 16px;
+      color: #666;
+      margin-top: 10px;
+      margin-bottom: 20px;
+    }
+
+    ion-button {
+      --background: #3880ff;
+      /* Cambia el color de fondo del botón */
+      --border-radius: 10px;
+      font-weight: 600;
+    }
+  }
+
+  ion-toolbar {
+    --background: #c6e8f8;
+    /* Color de fondo de la barra de herramientas */
+    --color: #334256;
+    /* Color del texto */
+  }
+}
+
+
+/* Estilo del header */
+.header {
+  background-color: #ffffff;
+  /* Azul claro */
+  color: #334256;
+  font-weight: 900;
+  /* Texto blanco */
+  padding: 10px 20px;
+  z-index: 2;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+
+  /* Espaciado superior e inferior, y a los lados */
+  // 
+  /* Sombra suave */
+  position: fixed;
+  /* Fijo en la parte superior */
+  top: 0;
+  margin-left: 0;
+    // z-index:1; 
+
+  // border: dashed;
+  width: 100%;
+
+  // z-index: 1000;
+  // margin-bottom: 10%;
+  /* Asegura que el header esté encima de otros elementos */
+}
+
+
+/* Estilo de la barra de herramientas */
+.toolbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  /* Espacio entre elementos */
+}
+
+/* Estilo del título */
+.title {
+  font-size: 24px;
+  font-weight: bold;
+  /* Negrita para el título */
+  margin: 0;
+}
+
+
+
+ion-fab-button::part(native) {
+  background-color: #f0f0f0;
+  border-radius: 50px;
+  box-shadow: 0px 1px 2px 0px rgba(0, 0, 0, 0.3), 0px 1px 3px 1px rgba(0, 0, 0, 0.15);
+  color: rgb(91, 91, 91);
+}
+
+ion-fab-button::part(native):hover::after {
+  background-color: #a3e681;
+}
+
+ion-fab-button::part(native):active::after {
+  background-color: #87d361;
+}

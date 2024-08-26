@@ -1,0 +1,77 @@
+// Variables de color personalizadas
+$primary-color: #007bff; // Azul Primario
+$secondary-color: #0056b3; // Azul Secundario
+$background-color: #f8f9fa; // Fondo de la página
+
+// Sobrescribir estilos
+:root {
+    --secondary-color: $secondary-color;
+    --background-color: $background-color;
+    --title-color: #334256;
+    --text-color: #6a7180;
+}
+
+.login-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    text-align: center;
+    margin-top: 20px;
+    padding: 10px;
+    box-sizing: border-box;
+
+    .login-image {
+        width: 150px;
+        height: 150px;
+        margin-bottom: 20px;
+        border-radius: 50%;
+
+    }
+
+    h2 {
+        font-size: 24px;
+        margin-bottom: 10px;
+        font-weight: bold;
+        color: var(--title-color);
+    }
+
+    p {
+        color: var(--text-color);
+        margin-bottom: 20px;
+    }
+
+    form {
+        width: 100%;
+        max-width: 300px;
+    }
+
+    ion-item {
+        margin-bottom: 15px;
+    }
+
+    ion-button {
+        margin-top: 20px;
+        // --background: #000;
+    }
+
+    .signup {
+        margin-top: 20px;
+
+        p {
+            font-size: 14px;
+        }
+
+        a {
+            color: var(--text-color);
+
+            text-decoration: none;
+        }
+    }
+}

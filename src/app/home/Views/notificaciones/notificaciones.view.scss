@@ -1,0 +1,178 @@
+.route-messages {
+  // margin: 20px;
+  width: 100%;
+  padding-left: 2%;
+  padding-right: 2%;
+  // overflow: scroll;
+  margin-top: 50px;
+
+  // border: #004085 solid;
+}
+
+.ion-padding {
+  overflow: scroll !important;
+  height: 80vh;
+  padding-bottom: 100px;
+  // background: #004085;
+  // border: dashed;
+  // border-end-end-radius: 10px;
+  width: 100%;
+  .load {
+    text-align: center;
+    justify-content: center;
+  }
+}
+
+.message-header {
+  display: flex;
+  justify-content: space-between;
+  font-weight: bold;
+  color:#fb9b00;
+}
+
+.mensaje-container {
+  // display: flex;
+  // flex-wrap: wrap;
+  /* Si necesitas que los elementos puedan ir a la siguiente línea */
+  // border: #004085 dashed;
+  margin-bottom: 10%;
+  /* Ajusta el gap según tus necesidades */
+}
+
+.message-details {
+  margin: 10px 0;
+  padding: 10px;
+  border-radius: 5px;
+  font-size: small;
+
+}
+
+.anulada .message-details {
+  background-color: #f8d7da;
+  color: #721c24;
+}
+
+.recibida .message-details {
+  background-color: #d4edda;
+  color: #155724;
+}
+
+.enviada .message-details {
+  background-color: #cce5ff;
+  color: #004085;
+}
+.finalizada .message-details {
+  background-color: #f3f3f3;
+  color: #474747;
+}
+
+.view-details-btn {
+  background-color: #007bff;
+  color: white;
+  border: none;
+  padding: 10px;
+  border-radius: 5px;
+  cursor: pointer;
+  text-align: center;
+  display: inline-block;
+}
+
+.view-details-btn:hover {
+  background-color: #0056b3;
+}
+
+
+.header {
+  // z-index: 999;
+  box-shadow: none;
+
+  --background: #4a90e2;
+  /* Color de fondo del header */
+  --color: #3f4753;
+  /* Color del texto */
+  --border-color: #3a7bd5;
+  /* Color del borde */
+
+  ion-toolbar {
+    --background: transparent;
+    /* Hacer transparente la barra de herramientas */
+    --color: #3f4753;
+    /* Color del texto dentro de la barra */
+    padding: 0 16px;
+    /* Padding personalizado para el toolbar */
+  }
+
+  ion-title {
+    font-size: 1.5rem;
+    /* Tamaño de la fuente del título */
+    font-weight: bold;
+    /* Negrita para el título */
+    text-align: center;
+    /* Centrar el título */
+  }
+
+  ion-progress-bar {
+    --progress-background: rgb(234, 233, 233);
+    /* Fondo del progress bar */
+    --background: rgb(67, 152, 195);
+    /* Color de la barra de progreso */
+    height: 4px;
+    /* Altura de la barra de progreso */
+    border-radius: 2px;
+    /* Bordes redondeados de la barra */
+    margin-top: 4px;
+    /* Espacio superior entre el título y la barra de progreso */
+  }
+}
+
+// header options
+.custom-header {
+  --background: none;
+  /* Color de fondo del header */
+  --color: rgb(141, 141, 141);
+  /* Color del texto */
+  // --border-color: none;
+  /* Color del borde */
+  // box-shadow: none;
+  margin-top: 10px;
+box-shadow: none;
+// border-bottom:solid 1px #3f4753 ;
+  ion-toolbar {
+    --background: transparent;
+    /* Hacer transparente la barra de herramientas */
+    --color: #3f4753;
+// border-bottom:solid 1px #3f4753 ;
+
+  }
+  
+  ion-segment {
+    --background: white;
+    /* Fondo del segmento */
+    --indicator-color: #999999;
+    /* Color del indicador debajo del botón seleccionado */
+    --border-radius: 10px;
+    /* Bordes redondeados */
+    --margin: 10px;
+    /* Margen alrededor del segmento */
+  }
+
+  ion-segment-button {
+    // border: #004085 solid;
+    --color-checked: #334155;
+    /* Color del texto cuando está seleccionado */
+    --color: #afafaf;
+    /* Color del texto cuando no está seleccionado */
+    --indicator-color: #334155;
+    /* Indicador de color cuando está seleccionado */
+
+    ion-label {
+      // background-color: #f3f3f3;
+      // border-radius: 10px;
+      padding: 10px;
+      font-weight: bold;
+      /* Negrita para las etiquetas */
+      font-size: 1.1rem;
+      /* Tamaño de fuente más grande */
+    }
+  }
+}

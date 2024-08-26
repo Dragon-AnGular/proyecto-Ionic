@@ -1,0 +1,54 @@
+<ion-header class="header">
+  <!-- <ion-toolbar> -->
+    <!-- <ion-title>Notificaciones</ion-title> -->
+    <ion-progress-bar *ngIf="isLoading" type="indeterminate"></ion-progress-bar>
+  <!-- </ion-toolbar> -->
+</ion-header>
+
+<ion-header *ngIf="!isLoading" class="custom-header">
+  <ion-toolbar>
+    <ion-segment value="hoy">
+      <ion-segment-button value="hoy">
+        <ion-label>Hoy</ion-label>
+      </ion-segment-button>
+      <ion-segment-button value="all">
+        <ion-label>Todos</ion-label>
+      </ion-segment-button>
+    </ion-segment>
+  </ion-toolbar>
+</ion-header>
+
+
+
+
+<div class="ion-padding" >
+  <ion-refresher slot="fixed" (ionRefresh)="handleRefresh($event)">
+    <ion-refresher-content></ion-refresher-content>
+  </ion-refresher>
+
+  <!-- Este mensaje aparecerá mientras los datos se cargan -->
+  <p class="load" *ngIf="isLoading">Cargando notificaciones, por favor espera...</p>
+
+  <!-- Este mensaje aparecerá cuando los datos ya estén cargados -->
+  <p class="load" *ngIf="!isLoading">Desliza hacia abajo para refrescar el contenido.</p>
+
+  <div class="route-messages" >
+
+    <div *ngFor="let mensaje of mensajes" class="mensaje-container" [ngClass]="mensaje.tipo">
+      <div class="message-header">
+        <span class="message-date">{{ mensaje.fecha | date:'short' }}</span>
+        <span class="message-type">{{ mensaje.tipo | titlecase }}</span>
+      </div>
+      <div class="message-details">
+        <p><strong>Ruta ID:</strong> {{ mensaje.rutaId }}</p>
+        <p><strong>Vehículo:</strong> {{ mensaje.vehiculo }}</p>
+        <p><strong>Hora de notificación:</strong> {{ mensaje.horaNotificacion | date:'shortTime' }}</p>
+        <p><strong>Cantidad de clientes:</strong> {{ mensaje.cantidadClientes }}</p>
+        <p><strong>Colonias visitadas:</strong> {{ mensaje.colonias.join(', ') }}</p>
+        <p><strong>Fecha de recepción:</strong> {{ mensaje.fechaRecibido | date:'short' }}</p>
+        <p><strong>Fecha de finalización:</strong> {{ mensaje.fechaTermino | date:'short' }}</p>
+      </div>
+      <button class="view-details-btn" (click)="verDetalles(mensaje)">Ver más detalles</button>
+    </div>
+  </div>
+</div>
